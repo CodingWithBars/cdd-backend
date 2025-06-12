@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
-const geoSchema = {
-  municipality: { type: String, required: true },
-  barangay: { type: String, required: true },
-  street: { type: String, required: true },
-};
+const geoSchema = new mongoose.Schema({
+  municipality: { type: String, required: false }, // Optional, since you may or may not reverse geocode
+  barangay: { type: String, required: false },
+  street: { type: String, required: false },
+  latitude: { type: Number, required: true },
+  longitude: { type: Number, required: true },
+});
 
 const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
