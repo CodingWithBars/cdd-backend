@@ -1,20 +1,14 @@
 {
-  "name": "chicken-disease-api",
+  "name": "cdd-backend",
   "version": "1.0.0",
-  "description": "REST API for user signup/login and scan submission using JWT and MongoDB",
+  "description": "Chicken Disease Detector API",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
-  "keywords": [
-    "express",
-    "mongodb",
-    "jwt",
-    "api",
-    "nodejs"
-  ],
-  "author": "Your Name",
+  "keywords": [],
+  "author": "",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.1.1",
@@ -26,6 +20,6 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.0"
   }
 }
