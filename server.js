@@ -3,12 +3,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
 const scanRoutes = require('./routes/scanRoutes');
+const scanHistoryRoutes = require('./routes/scanHistoryRoutes');
 
 const app = express();
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/scan', scanRoutes);
+app.use('/api/scan_history', scanHistoryRoutes);
 
 const PORT = process.env.PORT || 5000;
 
