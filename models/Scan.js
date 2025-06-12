@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const scanSchema = new mongoose.Schema({
-  image_url: { type: String, required: true }, // new field for image
+  image_url: { type: String }, // new field for image
   result: {
     type: String,
     enum: ['Salmo', 'Newcastle', 'Cocci', 'Healthy', 'Unknown'],
