@@ -7,6 +7,7 @@ exports.submitScan = async (req, res) => {
       userID,
       image_url,
       result,
+      confidence,       // <--- added confidence here
       severity,
       location_name,
       scanned_at,
@@ -17,6 +18,7 @@ exports.submitScan = async (req, res) => {
       userID,
       image_url,
       result,
+      confidence,       // <--- save confidence to DB
       severity,
       location_name,
       scanned_at,

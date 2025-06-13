@@ -7,6 +7,12 @@ const scanSchema = new mongoose.Schema({
     enum: ['Salmo', 'Newcastle', 'Cocci', 'Healthy', 'Unknown'],
     required: true,
   },
+  confidence: {
+    type: Number,
+    required: true,    // or false if you want optional
+    min: 0,
+    max: 1,
+  },
   scanned_at: { type: Date, default: Date.now }, // renamed from createdAt
   location_name: { type: String, required: true }, // new field for location string
   severity: {
