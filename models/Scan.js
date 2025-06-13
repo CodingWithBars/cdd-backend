@@ -17,7 +17,7 @@ const scanSchema = new mongoose.Schema({
   location_name: { type: String, required: true }, // new field for location string
   severity: {
     type: String,
-    enum: ['High', 'Medium', 'Low', 'None'],
+    enum: ['low', 'moderate', 'high'],
     required: true,
   },
   probabilities: {
