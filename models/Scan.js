@@ -4,7 +4,7 @@ const scanSchema = new mongoose.Schema({
   image_url: { type: String }, // new field for image
   result: {
     type: String,
-    enum: ['Salmo', 'Newcastle', 'Cocci', 'Healthy', 'Unknown'],
+    enum: ['Salmo', 'Newcastle', 'Cocci', 'Healthy', 'Non Fecal'],
     required: true,
   },
   confidence: {
@@ -17,7 +17,7 @@ const scanSchema = new mongoose.Schema({
   location_name: { type: String, required: true }, // new field for location string
   severity: {
     type: String,
-    enum: ['low', 'moderate', 'high'],
+    enum: ['low', 'medium', 'high'],
     required: true,
   },
   probabilities: {
