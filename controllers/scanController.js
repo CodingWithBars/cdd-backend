@@ -1,21 +1,29 @@
+// controllers/scanController.js
 const Scan = require('../models/Scan');
-const { v4: uuidv4 } = require('uuid');
 
 exports.submitScan = async (req, res) => {
   try {
-    const userID = req.user.id;
-    const { name, geoLocation, prediction, confidence } = req.body;
+    const {
+      userID,
+      image_url,
+      result,
+      severity,
+      location_name,
+      scanned_at,
+      probabilities,
+    } = req.body;
 
     const scan = await Scan.create({
-      scanID: uuidv4(),
       userID,
-      name,
-      geoLocation,
-      prediction,
-      confidence,
+      image_url,
+      result,
+      severity,
+      location_name,
+      scanned_at,
+      probabilities,
     });
 
-    res.status(201).json({ message: 'Scan recorded', scan });
+    res.status(201).json({ message: 'Scan saved', scan });
   } catch (err) {
     res.status(500).json({ error: 'Scan submission failed', details: err.message });
   }
