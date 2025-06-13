@@ -1,13 +1,13 @@
-// controllers/scanController.js
 const Scan = require('../models/Scan');
 
 exports.submitScan = async (req, res) => {
   try {
     const {
+      scan_id,          // ✅ Include scan_id
       userID,
       image_url,
       result,
-      confidence,       // <--- added confidence here
+      confidence,
       severity,
       location_name,
       scanned_at,
@@ -15,10 +15,11 @@ exports.submitScan = async (req, res) => {
     } = req.body;
 
     const scan = await Scan.create({
+      scan_id,          // ✅ Store scan_id
       userID,
       image_url,
       result,
-      confidence,       // <--- save confidence to DB
+      confidence,
       severity,
       location_name,
       scanned_at,

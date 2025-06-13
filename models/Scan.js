@@ -1,7 +1,12 @@
 const mongoose = require('mongoose');
 
 const scanSchema = new mongoose.Schema({
-  image_url: { type: String }, // new field for image
+  scan_id: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  image_url: { type: String },
   result: {
     type: String,
     enum: ['Salmo', 'Newcastle', 'Cocci', 'Healthy', 'NonFecal'],
@@ -9,12 +14,12 @@ const scanSchema = new mongoose.Schema({
   },
   confidence: {
     type: Number,
-    required: true,    // or false if you want optional
+    required: true,
     min: 0,
     max: 1,
   },
-  scanned_at: { type: Date, default: Date.now }, // renamed from createdAt
-  location_name: { type: String, required: true }, // new field for location string
+  scanned_at: { type: Date, default: Date.now },
+  location_name: { type: String, required: true },
   severity: {
     type: String,
     enum: ['Low', 'Moderate', 'High'],
@@ -25,7 +30,7 @@ const scanSchema = new mongoose.Schema({
     of: Number,
     default: {},
   },
-  userID: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: false }, // optional for public scans
+  userID: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: false },
 });
 
 module.exports = mongoose.model('Scan', scanSchema);
