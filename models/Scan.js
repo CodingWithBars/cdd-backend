@@ -4,7 +4,7 @@ const scanSchema = new mongoose.Schema({
   image_url: { type: String }, // new field for image
   result: {
     type: String,
-    enum: ['Salmo', 'Newcastle', 'Cocci', 'Healthy', 'Non Fecal'],
+    enum: ['Salmo', 'Newcastle', 'Cocci', 'Healthy', 'NonFecal'],
     required: true,
   },
   confidence: {
