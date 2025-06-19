@@ -11,8 +11,11 @@ const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true, lowercase: true },
   password: { type: String, required: true },
-  geoLocation: geoSchema, // Now only contains lat/lon
+  geoLocation: geoSchema,
+}, {
+  timestamps: true // adds createdAt and updatedAt
 });
+
 
 // Hash password before saving
 userSchema.pre('save', async function (next) {
