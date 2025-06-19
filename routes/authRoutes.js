@@ -1,6 +1,6 @@
 const express = require('express');
 const { signup, login, updateUser, deleteUser } = require('../controllers/authControllers');
-const authMiddleware = require('../middlewares/auth'); // your JWT middleware
+const authMiddleware = require('../middlewares/authMiddleware'); // your JWT middleware
 const router = express.Router();
 
 // Public routes
